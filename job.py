@@ -10,6 +10,3 @@ class Calculator(MRJob):
     def reducer(self, region, dates):
         sort_key = lambda date: date.weight
         yield region, max(sorted(dates, key=sort_key))
-
-if __name__ == '__main__':
-    Calculator.run()
