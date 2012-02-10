@@ -6,7 +6,11 @@ from classes import Game, ReleaseDate, regions
 
 def generate_input_file(release_dates):
     for release_date in release_dates:
-        print "%s,%s" % (release_date.date, release_date.region.name)
+        print "%s,%s,%i" % (
+            release_date.date,
+            release_date.region.name,
+            release_date.region.weight,
+        )
 
 if __name__ == "__main__":
     game = Game('Super Mental 2')
