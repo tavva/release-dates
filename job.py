@@ -17,3 +17,6 @@ class Calculator(MRJob):
         sort_key = lambda date: date[1]
 
         yield region, sorted(values, key=sort_key)[0][0]
+
+if __name__ == "__main__":
+    Calculator.run()
