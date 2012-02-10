@@ -4,6 +4,10 @@ from job import Calculator
 
 from classes import Game, ReleaseDate, regions
 
+def generate_input_file(release_dates):
+    for release_date in release_dates:
+        print "%s,%s" % (release_date.date, release_date.region.name)
+
 if __name__ == "__main__":
     game = Game('Super Mental 2')
 
@@ -15,4 +19,6 @@ if __name__ == "__main__":
         ReleaseDate(game, datetime.date(2012, 1, 5), regions['britain']),
     ]
 
-    Calculator.run(dates)
+    generate_input_file(release_dates)
+
+    # Calculator.run(dates)
