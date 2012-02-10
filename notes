@@ -1,0 +1,15 @@
+Release dates can be global, continent-wide or country-wide.
+
+Each of these is a node. We represent the relations as a directed graph.
+
+  Global
+     |
+     |----------------|----------------...
+     v                v
+    Asia            Europe
+     |                |
+     |-----|-----...  |-----|-----...
+     v     v          v     v
+   India China     Britain France
+
+The mapper emits a key value with the key being the id of the node and the value being a set of all its children.
