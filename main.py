@@ -7,7 +7,7 @@ from classes import Game, ReleaseDate, regions
 if __name__ == "__main__":
     game = Game('Super Mental 2')
 
-    dates = [
+    release_dates = [
         ReleaseDate(game, datetime.date(2012, 1, 1), regions['global']),
         ReleaseDate(game, datetime.date(2012, 1, 2), regions['asia']),
         ReleaseDate(game, datetime.date(2012, 1, 3), regions['europe']),
