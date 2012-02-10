@@ -10,8 +10,8 @@ class Calculator(MRJob):
 
         yield region, (date, weight)
 
-        for region_name in region.children:
-            yield regions[region_name], (date, weight)
+        for region in region.children:
+            yield region, (date, weight)
 
     def reducer(self, region, values):
         sort_key = lambda date: date[1]
