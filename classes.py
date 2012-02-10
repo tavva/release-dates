@@ -25,7 +25,7 @@ class Game:
         self.name = name
 
 class ReleaseDate:
-    def __init__(self, game, region, date):
+    def __init__(self, game, date, region):
         self.game = game
         self.date = date
         self.region = region
