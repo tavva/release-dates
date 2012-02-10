@@ -1,11 +1,6 @@
 from mrjob.job import MRJob
-from mrjob.protocol import JSONValueProtocol, PickleProtocol, RawValueProtocol
 
 class Calculator(MRJob):
-    INPUT_PROTOCOL = RawValueProtocol
-    INTERNAL_PROTOCOL = PickleProtocol
-    OUTPUT_PROTOCOL = JSONValueProtocol
-
     def mapper(self, node):
         yield node.region, node
 
