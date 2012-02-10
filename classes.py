@@ -1,24 +1,23 @@
 class Region:
-    def __init__(self, region_id, name, weight, children):
-        self.region_id = region_id
+    def __init__(self, name, weight, children):
         self.name = name
         self.weight = weight
         self.children = children
 
 regions = {
-    'india': Region(4, 'india', 3, []),
-    'china': Region(5, 'china', 3, []),
-    'britain': Region(6, 'britain', 3, []),
-    'france': Region(7, 'france', 3, []),
+    'india': Region('india', 3, []),
+    'china': Region('china', 3, []),
+    'britain': Region('britain', 3, []),
+    'france': Region('france', 3, []),
 }
 
 regions.update({
-    'asia': Region(2, 'asia', 2, [4, 5]),
-    'europe': Region(3, 'europe', 2, [6, 7]),
+    'asia': Region('asia', 2, [regions['india'], regions['china']]),
+    'europe': Region('europe', 2, [regions['britain'], regions['france']]),
 })
 
 regions.update({
-    'global': Region(1, 'global', 1, [2, 3]),
+    'global': Region('global', 1, [regions['asia'], regions['europe']]),
 })
 
 class Game:
