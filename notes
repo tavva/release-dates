@@ -12,4 +12,14 @@ Each of these is a node. We represent the relations as a directed graph.
      v     v          v     v
    India China     Britain France
 
-The mapper emits a key value with the key being the id of the node and the value being a set of all its children.
+Each node contains either a release date if available or null, the 'weight' of
+the node with global being the highest and a set of all its child node ids.
+
+The mapper emits a key value for each of that nodes children with the key being
+the id of the child and the value being the parent's value (release date).
+
+The reducer takes all the messages for a particular node and rewrites the
+node's release date with the max of these after filtering out the nulls,
+sorting by weight.
+
+The process is repeated until there are no changes.
