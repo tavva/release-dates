@@ -20,7 +20,7 @@ class Calculator(MRJob):
     def reducer(self, region, values):
         sort_key = lambda date: -int(date[1])
 
-        yield region, sorted(values, key=sort_key)[0][0]
+        yield region.name, (region.name, sorted(values, key=sort_key)[0][0])
 
 if __name__ == "__main__":
     Calculator.run()
