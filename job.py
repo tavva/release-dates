@@ -1,5 +1,5 @@
 from mrjob.job import MRJob
-from mrjob.protocol import JSONValueProtocol, PickleProtocol, RawValueProtocol
+from mrjob.protocol import JSONValueProtocol, PickleProtocol
 
 from classes import regions
 
