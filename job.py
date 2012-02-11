@@ -1,8 +1,12 @@
 from mrjob.job import MRJob
+from mrjob.protocol import JSONValueProtocol, PickleProtocol, RawValueProtocol
 
 from classes import regions
 
 class Calculator(MRJob):
+    INTERNAL_PROTOCOL = PickleProtocol
+    OUTPUT_PROTOCOL = JSONValueProtocol
+
     def mapper(self, key, line):
         date, region_name, weight = line.split(',')
 
