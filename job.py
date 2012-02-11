@@ -18,7 +18,7 @@ class Calculator(MRJob):
             yield region, (date, weight)
 
     def reducer(self, region, values):
-        sort_key = lambda date: date[1]
+        sort_key = lambda date: -int(date[1])
 
         yield region, sorted(values, key=sort_key)[0][0]
 
